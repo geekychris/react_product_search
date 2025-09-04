@@ -29,6 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "index-data": "node scripts/index-products.js",
+    "generate-catalog": "node scripts/generate-catalog.js",
+    "test-search": "./test-search.sh",
     "server": "node server/index.js",
     "clean": "./clean.sh",
     "clean:build": "rm -rf build",

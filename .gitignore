@@ -89,3 +89,6 @@ clean.sh.log
 .proxy.pid
 .serve.pid
 *.pid
+
+# Backup catalog files
+data/products-*.json

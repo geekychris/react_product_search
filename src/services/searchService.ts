@@ -103,8 +103,7 @@ class SearchService {
             'brand^2',         // Boost brand matches
             'category',
             'subcategory',
-            'tags^1.5',        // Boost tag matches
-            'specifications.*'  // Search in specifications
+            'tags^1.5'        // Boost tag matches
           ],
           type: 'best_fields',
           fuzziness: 'AUTO'
