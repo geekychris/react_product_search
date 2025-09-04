@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@opensearch-project/opensearch": "^3.5.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
@@ -11,8 +12,13 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -21,7 +27,23 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "index-data": "node scripts/index-products.js",
+    "server": "node server/index.js",
+    "clean": "./clean.sh",
+    "clean:build": "rm -rf build",
+    "clean:deps": "rm -rf node_modules package-lock.json",
+    "clean:cache": "npm cache clean --force",
+    "clean:all": "rm -rf build node_modules coverage .DS_Store npm-debug.log* && npm cache clean --force",
+    "build:all": "./build-all.sh",
+    "run:all": "./run-all.sh",
+    "run:proxy-only": "./run-all.sh --proxy-only",
+    "run:check-services": "./run-all.sh --check-services",
+    "build-and-run": "./build-and-run.sh",
+    "build-and-run:dev": "./build-and-run.sh --dev",
+    "build-and-run:prod": "./build-and-run.sh --prod",
+    "build-and-run:build-only": "./build-and-run.sh --build-only",
+    "help": "./help.sh"
   },
   "eslintConfig": {
     "extends": [
