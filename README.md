@@ -2,7 +2,8 @@
 
 A modern, production-ready React-based search interface for exploring products using OpenSearch. This application provides a comprehensive search experience with features like intelligent search, auto-complete suggestions, advanced filtering, infinite scroll, and responsive design.
 
-![img.png](markdown_pics/search_screen.png)
+
+![img.png](markdown_pics/searchImages.png)
 ## Features
 
 - **Intelligent Search**: Multi-field search with relevance scoring and fuzzy matching
