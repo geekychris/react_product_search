@@ -55,6 +55,110 @@ const randomFloat = (min, max, decimals = 2) => parseFloat((Math.random() * (max
 // Generate random element from array
 const randomChoice = (array) => array[randomInt(0, array.length - 1)];
 
+// Real product image URLs by category
+const PRODUCT_IMAGES = {
+  "Electronics": {
+    "Laptops": [
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400",
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400",
+      "https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=400",
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400",
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400"
+    ],
+    "Smartphones": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400",
+      "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?w=400",
+      "https://images.unsplash.com/photo-1601972602923-56c4c6f48a48?w=400",
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400"
+    ],
+    "Headphones": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400",
+      "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=400",
+      "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=400"
+    ],
+    "Cameras": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400",
+      "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400"
+    ],
+    "default": [
+      "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400",
+      "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400"
+    ]
+  },
+  "Computer Components": {
+    "Graphics Cards": [
+      "https://images.unsplash.com/photo-1591238899276-c8e4b2ab9a5b?w=400",
+      "https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=400"
+    ],
+    "default": [
+      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400",
+      "https://images.unsplash.com/photo-1540829917886-91ab031b1764?w=400"
+    ]
+  },
+  "Fashion": {
+    "Shoes": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400"
+    ],
+    "Watches": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400",
+      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=400"
+    ],
+    "default": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400"
+    ]
+  },
+  "Home & Garden": {
+    "Kitchen Appliances": [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400"
+    ],
+    "Furniture": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400",
+      "https://images.unsplash.com/photo-1549497538-303791108f95?w=400",
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400"
+    ],
+    "default": [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400"
+    ]
+  },
+  "Sports & Outdoors": {
+    "Fitness Equipment": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400"
+    ],
+    "default": [
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=400"
+    ]
+  },
+  "Toys & Games": {
+    "default": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
+      "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400",
+      "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=400"
+    ]
+  },
+  "default": [
+    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400",
+    "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400",
+    "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400",
+    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+    "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400"
+  ]
+};
+
 // Generate realistic product names based on category
 const generateProductName = (category, subcategory, brand) => {
   const productTypes = {
@@ -219,6 +323,26 @@ const generateTags = (category, subcategory, brand) => {
   return selectedTags;
 };
 
+// Generate product image URL based on category and subcategory
+const generateImageUrl = (category, subcategory) => {
+  // Try to get images for specific category and subcategory
+  const categoryImages = PRODUCT_IMAGES[category];
+  if (categoryImages) {
+    const subcategoryImages = categoryImages[subcategory];
+    if (subcategoryImages && subcategoryImages.length > 0) {
+      return randomChoice(subcategoryImages);
+    }
+    // Fallback to category default
+    const defaultImages = categoryImages['default'];
+    if (defaultImages && defaultImages.length > 0) {
+      return randomChoice(defaultImages);
+    }
+  }
+  
+  // Final fallback to global default
+  return randomChoice(PRODUCT_IMAGES['default']);
+};
+
 // Generate a single product
 const generateProduct = (id) => {
   // Select category and subcategory
@@ -234,6 +358,7 @@ const generateProduct = (id) => {
   const description = generateDescription(category, subcategory, name);
   const specifications = generateSpecifications(category, subcategory);
   const tags = generateTags(category, subcategory, brand);
+  const imageUrl = generateImageUrl(category, subcategory);
   
   // Generate price based on category
   const priceRanges = {
@@ -266,7 +391,7 @@ const generateProduct = (id) => {
     availability: randomChoice(AVAILABILITY_OPTIONS),
     specifications,
     tags,
-    image_url: `https://example.com/${name.toLowerCase().replace(/\s+/g, '-')}.jpg`
+    image_url: imageUrl
   };
 };
 
