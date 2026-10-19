@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="React Product Search logo" width="180">
+</p>
+
 # OpenSearch React UI
 
 A modern, production-ready React-based search interface for exploring products using OpenSearch. This application provides a comprehensive search experience with features like intelligent search, auto-complete suggestions, advanced filtering, infinite scroll, and responsive design.
